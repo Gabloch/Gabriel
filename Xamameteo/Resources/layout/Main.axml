@@ -12,28 +12,11 @@
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <RelativeLayout
+    <EditText
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout1"
-        android:background="#545454"
-        android:layout_marginRight="0.0dp">
-        <TextView
-            android:text="Code Postal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ZipCodeSearchLabel"
-            android:id="@+id/ZipCodeLabel"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp" />
-        <EditText
-            android:inputType="number"
-            android:id="@+id/zipCodeEntry"
-            android:width="165dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/ZipCodeLabel" />
-    </RelativeLayout>
+        android:id="@+id/editCP" />
     <Button
         android:text="Voir la méteo !"
         android:id="@+id/weatherBtn"
@@ -139,4 +122,8 @@
         android:id="@+id/sunsetText"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1" />
 </LinearLayout>
