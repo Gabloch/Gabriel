@@ -3,6 +3,7 @@ using Android.Widget;
 using Android.OS;
 using System;
 
+
 namespace Xamameteo
 {
     [Activity(Label = "Xamameteo", MainLauncher = true, Icon = "@drawable/icon")]
@@ -12,7 +13,7 @@ namespace Xamameteo
         {
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
+            
             SetContentView(Resource.Layout.Main);
             Button button = FindViewById<Button>(Resource.Id.weatherBtn);
 
@@ -23,7 +24,7 @@ namespace Xamameteo
         {
             EditText codePostal = FindViewById<EditText>(Resource.Id.editCP);
 
-            if (!string.IsNullOrEmpty(codePostal.Text))
+            if (!String.IsNullOrEmpty(codePostal.Text))
             {
                 Weather weather = await Main.GetWeather(codePostal.Text);
                 if (weather != null)
