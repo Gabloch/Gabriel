@@ -5,125 +5,161 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1">
+        <TextView
+            android:text="Code Postal :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ZipCodeLabel"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:layout_marginRight="0.0dp" />
+        <EditText
+            android:inputType="number"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ZipCodeLabel"
+            android:id="@+id/ZipCodeEdit"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp" />
+        <Button
+            android:text="Voir la méteo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ZipCodeEdit"
+            android:id="@+id/button1" />
+    </RelativeLayout>
     <TextView
-        android:text="Rechercher par code postal :"
-        android:id="@+id/ZipCodeSearchLabel"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:inputType="number"
+        android:text="Current Weather"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editCP" />
-    <Button
-        android:text="Voir la méteo !"
-        android:id="@+id/weatherBtn"
-        android:width="165dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:text="Ville :"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/ResultsTitle"
+        android:textColor="#FFFF4D"
+        android:visibility="visible"
+        android:layout_marginLeft="25px" />
+    <TableLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/locationLabel"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/locationText"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp" />
-    <TextView
-        android:text="Temperature :"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tempLabel"
-        android:layout_marginLeft="10dp" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tempText"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp" />
-    <TextView
-        android:text="Vent :"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/windLabel"
-        android:layout_marginLeft="10dp" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/windText"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp" />
-    <TextView
-        android:text="Humidité :"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/humidtyLabel"
-        android:layout_marginLeft="10dp" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/humidityText"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp" />
-    <TextView
-        android:text="Visibilité :"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/visibilityLabel"
-        android:layout_marginLeft="10dp" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/visibilityText"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp" />
-    <TextView
-        android:text="Heure lever :"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sunriseLabel"
-        android:layout_marginLeft="10dp" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sunriseText"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp" />
-    <TextView
-        android:text="Heure du coucher :"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sunsetLabel"
-        android:layout_marginLeft="10dp" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sunsetText"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText1" />
+        android:id="@+id/ResultsTable"
+        android:padding="10dp"
+        android:visibility="visible">
+        <TableRow
+            android:id="@+id/tableRow1">
+            <TextView
+                android:text="Temp:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="0"
+                android:id="@+id/textView21" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="1"
+                android:id="@+id/TempText"
+                android:text=""
+                android:textColor="#FFFF4D"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="F"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="2"
+                android:id="@+id/textView26" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow2">
+            <TextView
+                android:text="Wind:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="0"
+                android:id="@+id/textView22" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="1"
+                android:id="@+id/WindText"
+                android:text=""
+                android:textColor="#FFFF4D" />
+            <TextView
+                android:text="mph"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="2"
+                android:id="@+id/textView27"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3">
+            <TextView
+                android:text="Humidity:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="0"
+                android:id="@+id/textView23"
+                android:layout_width="107.0dp" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="1"
+                android:id="@+id/HumidityText"
+                android:text=""
+                android:textColor="#FFFF4D"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="%"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="2"
+                android:id="@+id/textView28" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow4">
+            <TextView
+                android:text="Visibility:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="0"
+                android:id="@+id/textView34" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="1"
+                android:id="@+id/VisibilityText"
+                android:text=""
+                android:textColor="#FFFF4D"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="miles"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="2"
+                android:id="@+id/textView50" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow5">
+            <TextView
+                android:text="Sunrise:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="0"
+                android:id="@+id/textView40" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="1"
+                android:id="@+id/SunriseText"
+                android:text=""
+                android:textColor="#FFFF4D" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow6">
+            <TextView
+                android:text="Sunset:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="0"
+                android:id="@+id/textView46" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_column="1"
+                android:id="@+id/SunsetText"
+                android:text=""
+                android:textColor="#FFFF4D" />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>

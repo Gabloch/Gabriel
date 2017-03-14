@@ -15,13 +15,16 @@ namespace Xamameteo
             string queryString = "http://api.openweathermap.org/data/2.5/weather?zip="
                 + zipCode + ",&appid=" + key;
 
+            dynamic results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
+            dynamic weatherOverview = results["query"]["results"]["channel"];
+
 
             if (key == "7fecffff83edb60a46a1aafef9dd8f17")
             {
                 throw new ArgumentException("Prb clé API");
             }
 
-            var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
+            
 
             if (results["weather"] != null)
             {

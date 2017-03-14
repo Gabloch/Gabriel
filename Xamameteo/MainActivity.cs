@@ -15,29 +15,38 @@ namespace Xamameteo
 
             
             SetContentView(Resource.Layout.Main);
-            Button button = FindViewById<Button>(Resource.Id.weatherBtn);
+            Button button = FindViewById<Button>(Resource.Id.button1);
 
-            button.Click += Button_Click;
-        }
-
-        private async void Button_Click(object sender, EventArgs e)
-        {
-            EditText codePostal = FindViewById<EditText>(Resource.Id.editCP);
-
-            if (!String.IsNullOrEmpty(codePostal.Text))
+            button.Click += delegate
             {
-                Weather weather = await Main.GetWeather(codePostal.Text);
+                EditText ZipCodeEditText = FindViewById<EditText>(Resource.Id.ZipCodeEdit);
+
+                Weather weather = Main.GetWeather(ZipCodeEditText.Text).Result;
+
                 if (weather != null)
                 {
-                    FindViewById<TextView>(Resource.Id.locationText).Text = weather.Title;
-                    FindViewById<TextView>(Resource.Id.tempText).Text = weather.Temperature;
-                    FindViewById<TextView>(Resource.Id.windText).Text = weather.Wind;
-                    FindViewById<TextView>(Resource.Id.visibilityText).Text = weather.Visibility;
-                    FindViewById<TextView>(Resource.Id.humidityText).Text = weather.Humidity;
-                    FindViewById<TextView>(Resource.Id.sunriseText).Text = weather.Sunrise;
-                    FindViewById<TextView>(Resource.Id.sunsetText).Text = weather.Sunset;
+                    FindViewById<TextView>(Resource.Id.ResultsTitle).Text = weather.Title;
+                    FindViewById<TextView>(Resource.Id.TempText).Text = weather.Temperature;
+                    FindViewById<TextView>(Resource.Id.WindText).Text = weather.Wind;
+                    FindViewById<TextView>(Resource.Id.VisibilityText).Text = weather.Visibility;
+                    FindViewById<TextView>(Resource.Id.HumidityText).Text = weather.Humidity;
+                    FindViewById<TextView>(Resource.Id.SunriseText).Text = weather.Sunrise;
+                    FindViewById<TextView>(Resource.Id.SunsetText).Text = weather.Sunset;
+
+                    button.Text = "Search Again";
                 }
-            }
+                else
+                {
+                    FindViewById<TextView>(Resource.Id.ResultsTitle).Text = "Aucun résultat trouvé";
+                }
+
+            };
+
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
